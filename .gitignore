@@ -4,6 +4,7 @@ venv/
 *.pyc
 *.egg-info/
 *.egg
+*.xpi
 dist/
 .tox/
 .DS_Store
