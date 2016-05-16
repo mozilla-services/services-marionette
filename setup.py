@@ -32,11 +32,11 @@ setup(name='firefox-services-tests',
       long_description=README,
       classifiers=['Environment :: Console',
                    'Intended Audience :: Developers',
-                   'License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)',
+                   'License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)',  # noqa
                    'Natural Language :: English',
                    'Operating System :: OS Independent',
                    'Programming Language :: Python',
-                   'Topic :: Software Development :: Libraries :: Python Modules',
+                   'Topic :: Software Development :: Libraries :: Python Modules',  # noqa
                    ],
       keywords='mozilla services',
       author='Mozilla Cloud Services QA Team',

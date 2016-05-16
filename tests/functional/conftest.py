@@ -54,8 +54,9 @@ def puppeteer(marionette):
 @pytest.fixture
 def firefox(puppeteer):
     firefox = puppeteer.windows.current
-    with puppeteer.marionette.using_context(puppeteer.marionette.CONTEXT_CHROME):
-        firefox.focus()
+    with puppeteer.marionette.using_context(
+            puppeteer.marionette.CONTEXT_CHROME):
+                firefox.focus()
     puppeteer.marionette.set_context(puppeteer.marionette.CONTEXT_CONTENT)
     return firefox
 
