@@ -27,4 +27,3 @@ class ActivityStream(Base, BaseFirefoxTestCase):
     @property
     def top_sites(self):
         pass
-

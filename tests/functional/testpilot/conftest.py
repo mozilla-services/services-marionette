@@ -5,7 +5,6 @@
 import pytest
 
 
-
 from fxapom.fxapom import FxATestAccount, WebDriverFxA, DEV_URL
 
 from marionette_driver import By, Wait, expected
@@ -14,7 +13,8 @@ from marionette_driver import By, Wait, expected
 @pytest.fixture(scope='session')
 def base_url(request):
     """Return a base URL"""
-    return request.config.getoption('base_url') or 'http://testpilot.dev.mozaws.net/?butimspecial'
+    return request.config.getoption(
+        'base_url') or 'http://testpilot.dev.mozaws.net/?butimspecial'
 
 
 @pytest.fixture
@@ -39,7 +39,7 @@ def user(fxa_account):
 
 
 @pytest.fixture(scope='function')
-def sign_in(base_url, marionette, user,  timeout):
+def sign_in(base_url, marionette, user, timeout):
     """Handle logging into fxa"""
     _testpilot_sign_get_started_fxa_button_locator = (
         By.XPATH, '//button[text()="Sign in"]')
@@ -48,9 +48,11 @@ def sign_in(base_url, marionette, user,  timeout):
 
     marionette.navigate('%s/' % base_url)
     Wait(marionette, timeout).until(
-        expected.element_displayed(*_testpilot_sign_get_started_fxa_button_locator)
+        expected.element_displayed(
+            *_testpilot_sign_get_started_fxa_button_locator)
     )
-    marionette.find_element(*_testpilot_sign_get_started_fxa_button_locator).click()
+    marionette.find_element(
+        *_testpilot_sign_get_started_fxa_button_locator).click()
     Wait(marionette, timeout).until(
         expected.element_displayed(
             Wait(marionette, timeout).until(

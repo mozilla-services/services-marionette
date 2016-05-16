@@ -3,7 +3,6 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 from firefox_puppeteer import Puppeteer
-from firefox_puppeteer.ui.browser.window import BrowserWindow
 from marionette_driver.marionette import Marionette
 import pytest
 
@@ -23,7 +22,8 @@ def pytest_addoption(parser):
 @pytest.fixture(scope='session')
 def base_url(request):
     """Return a base URL"""
-    return request.config.getoption('base_url') or 'https://addons-dev.allizom.org'
+    return request.config.getoption(
+        'base_url') or 'https://addons-dev.allizom.org'
 
 
 @pytest.fixture

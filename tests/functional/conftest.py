@@ -5,7 +5,6 @@
 import pytest
 
 from firefox_puppeteer import Puppeteer
-from firefox_puppeteer.ui.browser.window import BrowserWindow
 
 from marionette_driver.marionette import Marionette
 

@@ -15,11 +15,13 @@ from apps.base import Base
 class TestPilot(Base):
     _login_with_firefox_button_locator = (
         By.CSS_SELECTOR, 'div.cta-layout a.fxa-alternate')
-    _testpilot_install_addon_button_locator = (By.CSS_SELECTOR, '[data-l10n-id="landingInstallButton"]')
+    _testpilot_install_addon_button_locator = (
+        By.CSS_SELECTOR, '[data-l10n-id="landingInstallButton"]')
 
     def __init__(self, puppeteer, firefox, url):
         super(TestPilot, self).__init__(puppeteer.marionette)
-        self.wait_for_element_displayed(*self._testpilot_install_addon_button_locator)
+        self.wait_for_element_displayed(
+            *self._testpilot_install_addon_button_locator)
         self.click_element(*self._testpilot_install_addon_button_locator)
         with self.marionette.using_context(self.marionette.CONTEXT_CHROME):
             if 'dev' in url:
@@ -30,4 +32,3 @@ class TestPilot(Base):
             firefox.notification.install()
             firefox.wait_for_notification(AddOnInstallCompleteNotification)
             firefox.notification.close()
-

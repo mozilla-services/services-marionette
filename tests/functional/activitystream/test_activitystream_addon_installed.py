@@ -8,4 +8,4 @@ from apps.activitystream.app import ActivityStream
 class TestActivityStreamAddonInstalled(object):
 
     def test_activitystream_addon_installed(self, install_xpi, puppeteer):
-        activity_stream = ActivityStream(puppeteer)
+        activity_stream = ActivityStream(puppeteer)  # noqa

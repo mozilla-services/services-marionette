@@ -5,9 +5,7 @@
 import os
 import pytest
 
-from fxapom.fxapom import FxATestAccount, WebDriverFxA, PROD_URL
-
-from marionette_driver import By, expected,  Wait
+from marionette_driver import By, expected, Wait
 
 
 @pytest.fixture(scope='function')
@@ -18,8 +16,9 @@ def install_xpi(marionette, timeout):
 
     xpi_path = os.path.dirname(os.getcwd())
     xpi_file_path = os.path.join(xpi_path, 'activity_stream.xpi')
-    activity_stream_xpi.retrieve('https://moz-activity-streams-dev.s3.amazonaws.com/dist/activity-streams-latest.xpi',
-                                 xpi_file_path)
+    activity_stream_xpi.retrieve(
+        'https://moz-activity-streams-dev.s3.amazonaws.com/dist/activity-streams-latest.xpi',
+        xpi_file_path)
     addons = Addons(marionette)
     print xpi_file_path
     addons.install(xpi_file_path)
