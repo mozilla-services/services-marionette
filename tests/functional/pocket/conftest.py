@@ -6,13 +6,15 @@ import pytest
 
 from fxapom.fxapom import FxATestAccount, WebDriverFxA, PROD_URL
 
-from marionette_driver import By, expected,  Wait
+from marionette_driver import By, expected, Wait
 
 
 @pytest.fixture(scope='session')
 def base_url(request):
     """Return a base URL"""
-    return request.config.getoption('base_url') or 'https://www.getpocket.com/login'
+    return request.config.getoption(
+        'base_url') or 'https://www.getpocket.com/login'
+
 
 @pytest.fixture
 def fxa_account():
@@ -51,9 +53,10 @@ def sign_in(base_url, marionette, user, timeout):
     driver = WebDriverFxA(marionette, timeout)
     driver.sign_in(user['email'], user['password'])
     Wait(marionette, timeout).until(
-        expected.element_displayed(Wait(marionette,timeout).until(
+        expected.element_displayed(Wait(marionette, timeout).until(
             expected.element_present(*_pocket_accept_permission_locator))
         )
     )
-    assert marionette.find_element(*_pocket_email_address_accept_locator).text == user['email']
+    assert marionette.find_element(
+        *_pocket_email_address_accept_locator).text == user['email']
     marionette.find_element(*_pocket_accept_permission_locator).click()

@@ -5,7 +5,7 @@
 import pytest
 
 from firefox_puppeteer import Puppeteer
-from firefox_puppeteer.ui.browser.window import BrowserWindow
+from firefox_puppeteer.ui.browser.window import BrowserWindow  # noqa
 
 from marionette_driver.marionette import Marionette
 
@@ -55,8 +55,9 @@ def puppeteer(marionette):
 @pytest.fixture
 def firefox(puppeteer):
     firefox = puppeteer.windows.current
-    with puppeteer.marionette.using_context(puppeteer.marionette.CONTEXT_CHROME):
-        firefox.focus()
+    with puppeteer.marionette.using_context(
+            puppeteer.marionette.CONTEXT_CHROME):
+                firefox.focus()
     puppeteer.marionette.set_context(puppeteer.marionette.CONTEXT_CONTENT)
     return firefox
 

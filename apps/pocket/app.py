@@ -37,10 +37,12 @@ class Pocket(Base):
     @property
     def queue_items(self):
         return [self.QueueItem(self.marionette, queue_item) for queue_item in
-                self.marionette.find_elements(*self._pocket_all_pocket_items_locator)]
+                self.marionette.find_elements(
+                    *self._pocket_all_pocket_items_locator)]
 
     class QueueItem(PageRegion):
-        # TODO: Create methods for all of these different properties and functions.
+        # TODO: Create methods for all of these different properties and
+        # functions.
 
         @property
         def header(self):
@@ -72,4 +74,3 @@ class Pocket(Base):
 
         def delete_tag(self):
             pass
-
