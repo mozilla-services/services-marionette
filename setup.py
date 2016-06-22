@@ -25,8 +25,8 @@ with io.open(os.path.join(here, 'README.rst'), encoding='utf8') as f:
 
 setup(name='marionette-base',
       version=PACKAGE_VERSION,
-      description='A wrapper for Marionette that helps with legibility of tests',
-      long_description='See https://github.com/mozilla-services/services-test/tree/dev/services-marionette',
+      description='A wrapper for Marionette that increases test legibility',
+      long_description='See https://github.com/mozilla-services/services-test/tree/dev/services-marionette',  # noqa
       classifiers=['Environment :: Console',
                    'Intended Audience :: Developers',
                    'License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)',  # noqa
