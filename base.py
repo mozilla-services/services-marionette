@@ -2,13 +2,17 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-from marionette_driver import expected, Wait, Actions
+from marionette_driver import By, expected, Wait, Actions
 from marionette_driver.errors import NoSuchElementException
 
 import re
 
 
 class Base(object):
+
+    _bookmark_button_locator = (By.ID, 'bookmarks-menu-button')
+    _bookmark_panel_done_button_locator = (
+        By.ID, 'editBookmarkPanelDoneButton')
 
     def __init__(self, marionette):
         self.marionette = marionette
@@ -31,8 +35,6 @@ class Base(object):
                 self.marionette.navigate(url)
             else:
                 raise ValueError('Url is malformed.')
-        else:
-            raise ValueError("Url must contain a value.")
 
     def is_element_present(self, by, locator):
         try:
@@ -82,11 +84,16 @@ class Base(object):
     def send_keys_to_element(self, by, locator, string):
         self.marionette.find_element(by, locator).send_keys(string)
 
-    def wait(self, time):
-        self.action.wait(time).perform()
-
     def get_element_text(self, by, locator):
         return self.marionette.find_element(by, locator).text
+
+    def get_attribute(self, by, locator, attribute):
+        return self.marionette.find_element(by, locator).get_attribute(attribute=attribute)
+
+    def bookmark_page(self):
+        with self.marionette.using_context(self.CHROME):
+            self.click_element(*self._bookmark_button_locator)
+            self.click_element(*self._bookmark_panel_done_button_locator)
 
 
 class PageRegion(Base):
