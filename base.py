@@ -50,8 +50,14 @@ class Base(object):
             return False
 
     def wait_for_element_displayed(self, by, locator):
-        return Wait(self.marionette).until(expected.element_displayed(
-            Wait(self.marionette).until(expected.element_present(by, locator))))
+        return Wait(
+            self.marionette).until(
+            expected.element_displayed(
+                Wait(
+                    self.marionette).until(
+                    expected.element_present(
+                        by,
+                        locator))))
 
     def wait_for_element_present(self, by, locator):
         Wait(self.marionette).until(expected.element_present(by, locator))
@@ -61,15 +67,24 @@ class Base(object):
             expected.element_enabled(lambda m: m.find_element(by, locator)))
 
     def wait_for_element_not_displayed(self, by, locator):
-        Wait(self.marionette).until(expected.element_not_displayed(
-            Wait(self.marionette).until(expected.element_present(by, locator))))
+        Wait(
+            self.marionette).until(
+            expected.element_not_displayed(
+                Wait(
+                    self.marionette).until(
+                    expected.element_present(
+                        by,
+                        locator))))
 
     def wait_for_element_not_present(self, by, locator):
         Wait(self.marionette).until(expected.element_not_present(by, locator))
 
     def wait_for_element_not_enabled(self, by, locator):
-        Wait(self.marionette).until(
-            expected.element_not_enabled(lambda m: m.find_element(by, locator)))
+        Wait(
+            self.marionette).until(
+            expected.element_not_enabled(
+                lambda m: m.find_element(
+                    by, locator)))
 
     def set_context(self, context):
         if context != self.CHROME and context != self.CONTENT:
@@ -88,7 +103,9 @@ class Base(object):
         return self.marionette.find_element(by, locator).text
 
     def get_attribute(self, by, locator, attribute):
-        return self.marionette.find_element(by, locator).get_attribute(attribute=attribute)
+        return self.marionette.find_element(
+            by, locator).get_attribute(
+            attribute=attribute)
 
     def bookmark_page(self):
         with self.marionette.using_context(self.CHROME):

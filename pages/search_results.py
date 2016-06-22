@@ -11,16 +11,17 @@ class SearchResults(Base):
     _search_results_search_input_box_locator = (By.ID, 'yschsp')
     _search_results_search_button_locator = (
         By.CSS_SELECTOR, 'div.search-assist-form-wrapper input.sbb')
-    _search_results_mozilla_result_link_locator = (By.CSS_SELECTOR,
-                                                   'ol li.first div div.layoutCenter div.compTitle h3 a')
+    _search_results_mozilla_result_link_locator = (
+        By.CSS_SELECTOR, 'ol li.first div div.layoutCenter div.compTitle h3 a')
 
     def __init__(self, marionette, queried_search, url=None):
         super(SearchResults, self).__init__(marionette)
         self.launch(url)
         self.wait_for_element_displayed(
             *self._search_results_search_input_box_locator)
-        assert self.get_attribute(*self._search_results_search_input_box_locator,
-                                  attribute='value') == queried_search
+        assert self.get_attribute(
+            *self._search_results_search_input_box_locator,
+            attribute='value') == queried_search
 
     def click_first_result_mozilla(self):
         self.wait_for_element_displayed(
