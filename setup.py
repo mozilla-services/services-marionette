@@ -23,7 +23,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with io.open(os.path.join(here, 'README.rst'), encoding='utf8') as f:
     README = f.read()
 
-setup(name='marionette-base',
+setup(name='marionette-wrapper',
       version=PACKAGE_VERSION,
       description='A wrapper for Marionette that increases test legibility',
       long_description='See https://github.com/mozilla-services/services-test/tree/dev/services-marionette',  # noqa
@@ -38,7 +38,7 @@ setup(name='marionette-base',
       keywords='mozilla services',
       author='Mozilla Cloud Services QA Team',
       author_email='cloud-services-qa@mozilla.com',
-      url='https://github.com/mozilla-services/services-marionette',
+      url='https://github.com/mozilla-services/marionette-wrapper',  # noqa
       license='MPL 2.0',
       packages=find_packages(),
       include_package_data=True,
