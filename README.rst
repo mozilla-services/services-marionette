@@ -1,7 +1,7 @@
 ==================
 marionette-wrapper
 ==================
-.. image:: https://img.shields.io/pypi/l/fxapom.svg
+.. image:: https://img.shields.io/pypi/l/marionette-wrapper.svg
    :target: https://github.com/mozilla-services/marionette-wrapper/blob/master/LICENSE
    :alt: License
 .. image:: https://travis-ci.org/mozilla-services/marionette-wrapper.svg?branch=master
@@ -45,7 +45,7 @@ The sample test included with this package uses pytest to run the test. To invok
 API Examples For Common Functionality
 -------------------------------------
 
-This reference shows the marionette-base API call and it's equivalent Selenium counterpart.
+This reference shows the marionette-wrapper API call and it's equivalent Selenium counterpart.
 
 Launch
 ~~~~~~
@@ -73,7 +73,7 @@ Click Element
 
 .. code-block:: python
 
-    # marionette-base
+    # marionette-wrapper
     self.click_element(by, locator)
 
     # Selenium WebDriver
@@ -85,7 +85,7 @@ Wait For Element Present
 
 .. code-block:: python
 
-    # marionette-base
+    # marionette-wrapper
     self.wait_for_element_present(by, locator)
 
     # Selenium WebDriver
@@ -97,7 +97,7 @@ Wait For Element Not Present
 
 .. code-block:: python
 
-    # marionette-base
+    # marionette-wrapper
     self.wait_for_element_not_present(by, locator)
 
     # Selenium WebDriver
@@ -109,7 +109,7 @@ Wait For Element Displayed
 
 .. code-block:: python
 
-    # marionette-base
+    # marionette-wrapper
     self.wait_for_element_displayed(by, locator)
 
     # Selenium WebDriver
@@ -124,7 +124,7 @@ Wait For Element Not Displayed
 
 .. code-block:: python
 
-    # marionette-base
+    # marionette-wrapper
     self.wait_for_element_not_displayed(by, locator)
 
     # Selenium WebDriver
@@ -139,7 +139,7 @@ Wait For Element Enabled
 
 .. code-block:: python
 
-    # marionette-base
+    # marionette-wrapper
     self.wait_for_element_enabled(by, locator)
 
     # Selenium WebDriver
@@ -152,7 +152,7 @@ Wait For Element Not Enabled
 
 .. code-block:: python
 
-    # marionette-base
+    # marionette-wrapper
     self.wait_for_element_not_enabled(by, locator)
 
     # Selenium WebDriver
@@ -165,7 +165,7 @@ Is Element Present
 
 .. code-block:: python
 
-    # marionette-base
+    # marionette-wrapper
     self.is_element_present(by, locator)
 
     # Selenium WebDriver
@@ -181,7 +181,7 @@ Is Element Displayed
 
 .. code-block:: python
 
-    # marionette-base
+    # marionette-wrapper
     self.is_element_displayed(by, locator)
 
     # Selenium WebDriver
