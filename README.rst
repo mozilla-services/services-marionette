@@ -7,7 +7,7 @@ marionette-wrapper
 .. image:: https://travis-ci.org/mozilla-services/marionette-wrapper.svg?branch=master
     :target: https://travis-ci.org/mozilla-services/marionette-wrapper
 .. image:: https://img.shields.io/github/issues-raw/mozilla-services/marionette-wrapper.svg
-   :target: https://github.com/mozilla-services/service-marionette/issues
+   :target: https://github.com/mozilla-services/marionette-wrapper/issues
    :alt: Issues
 .. image:: https://img.shields.io/requires/github/mozilla-services/marionette-wrapper.svg
    :target: https://requires.io/github/mozilla-services/marionette-wrapper/requirements/?branch=master
