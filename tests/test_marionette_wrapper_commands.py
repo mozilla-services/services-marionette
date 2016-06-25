@@ -6,7 +6,7 @@
 from pages.yahoo import Yahoo
 
 
-class TestServicesMarionetteCommands(object):
+class TestMarionetteWrapperCommands(object):
 
     def test_services_marionette_commands(self, base_url, marionette):
         yahoo_page = Yahoo(marionette, base_url)
