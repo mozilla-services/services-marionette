@@ -2,11 +2,11 @@
 marionette-wrapper
 ==================
 .. image:: https://img.shields.io/pypi/l/fxapom.svg
-   :target: https://github.com/mozilla-services/services-marionette/blob/master/LICENSE
+   :target: https://github.com/mozilla-services/marionette-wrapper/blob/master/LICENSE
    :alt: License
-.. image:: https://travis-ci.org/mozilla-services/services-marionette.svg?branch=master
-    :target: https://travis-ci.org/mozilla-services/services-marionette
-.. image:: https://img.shields.io/github/issues-raw/mozilla-services/services-marionette.svg
+.. image:: https://travis-ci.org/mozilla-services/marionette-wrapper.svg?branch=master
+    :target: https://travis-ci.org/mozilla-services/marionette-wrapper
+.. image:: https://img.shields.io/github/issues-raw/mozilla-services/marionette-wrapper.svg
    :target: https://github.com/mozilla-services/service-marionette/issues
    :alt: Issues
 .. image:: https://img.shields.io/requires/github/mozilla-services/marionette-wrapper.svg
@@ -31,7 +31,7 @@ for the exact calls that can be made in the API.
 
 .. code-block:: python
 
-    from services-marionette.base import Base
+    from marionette-wrapper.base import Base
 
     class PageObject(Base):
         #code
