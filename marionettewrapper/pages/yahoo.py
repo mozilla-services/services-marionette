@@ -4,7 +4,7 @@
 
 from marionette_driver import By
 
-from base import Base
+from marionettewrapper.base import Base
 
 
 class Yahoo(Base):
@@ -22,5 +22,5 @@ class Yahoo(Base):
         self.send_keys_to_element(
             *self._yahoo_search_input_box_locator, string=query_string)
         self.click_element(*self._yahoo_search_button_locator)
-        from pages.search_results import SearchResults
+        from marionettewrapper.pages import SearchResults
         return SearchResults(self.marionette, query_string)

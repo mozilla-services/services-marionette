@@ -4,7 +4,7 @@
 
 from marionette_driver import By
 
-from base import Base
+from marionettewrapper.base import Base
 
 
 class Mozilla(Base):
