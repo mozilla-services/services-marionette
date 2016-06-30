@@ -6,7 +6,7 @@ import io
 import os
 from setuptools import setup, find_packages
 
-PACKAGE_VERSION = '0.0.2'
+PACKAGE_VERSION = '0.0.9.5'
 
 deps = [
     'marionette-client == 2.0.0',
@@ -23,7 +23,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with io.open(os.path.join(here, 'README.rst'), encoding='utf8') as f:
     README = f.read()
 
-setup(name='marionette-wrapper',
+setup(name='marionette_wrapper',
       version=PACKAGE_VERSION,
       description='A wrapper for Marionette that increases test legibility',
       long_description='See https://github.com/mozilla-services/marionette-wrapper',  # noqa

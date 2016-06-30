@@ -6,6 +6,7 @@ venv/
 *.egg
 *.xpi
 dist/
+build/
 .tox/
 .DS_Store
 

@@ -4,7 +4,7 @@
 
 from marionette_driver import By
 
-from base import Base
+from marionettewrapper.base import Base
 
 
 class SearchResults(Base):
@@ -27,6 +27,6 @@ class SearchResults(Base):
         self.wait_for_element_displayed(
             *self._search_results_mozilla_result_link_locator)
         self.click_element(*self._search_results_mozilla_result_link_locator)
-        from pages.mozilla import Mozilla
+        from marionettewrapper.pages import Mozilla
         self.marionette.switch_to_window(self.marionette.window_handles[1])
         return Mozilla(self.marionette)
